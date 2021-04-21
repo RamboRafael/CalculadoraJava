@@ -2,10 +2,15 @@
 package calculadorajava;
 public class Calculadora extends javax.swing.JFrame {
 String p1 = "";
+String p2 = "";
+int operador = 0;
+int pn = 0;
+int sn = 0;
+    
 
     public Calculadora() {
         initComponents();
-       
+        
     }
     
     @SuppressWarnings("unchecked")
@@ -252,60 +257,76 @@ String p1 = "";
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
-        p1+=0;
+        p1+="0";
+        p2+="0";
         Tela.setText(p1);
     }//GEN-LAST:event_btn0ActionPerformed
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
-        p1+=1;
+        p1+="1";
+        p2+="1";
         Tela.setText(p1);
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
-       p1+=2;
+       p1+="2";
+       p2+="2";
        Tela.setText(p1);
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
-        p1+=3;
+        p1+="3";
+        p2+="3";
         Tela.setText(p1);
     }//GEN-LAST:event_btn3ActionPerformed
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
-        p1+=4;
+        p1+="4";
+        p2+="5";
         Tela.setText(p1);
     }//GEN-LAST:event_btn4ActionPerformed
 
     private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
-       p1+=5;
+       p1+="5";
+       p2+="5";
        Tela.setText(p1);
     }//GEN-LAST:event_btn5ActionPerformed
 
     private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
-        p1+=6;
+        p1+="6";
+        p2+="6";
         Tela.setText(p1);
     }//GEN-LAST:event_btn6ActionPerformed
 
     private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
-        p1+=7;
+        p1+="7";
+        p2+="7";
         Tela.setText(p1);
     }//GEN-LAST:event_btn7ActionPerformed
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
-        p1+=8;
+        p1+="8";
+        p2+="8";
         Tela.setText(p1);
     }//GEN-LAST:event_btn8ActionPerformed
 
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
-        p1+=9;
-        Tela.setText(p1);
+        p1+="9";
+        p2+="9";
+       Tela.setText(p1); 
     }//GEN-LAST:event_btn9ActionPerformed
 
     private void btnSomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSomaActionPerformed
-        // TODO add your handling code here:
+        pn = Integer.parseInt(p1);
+       p1 += "+";
+       p2 = "";
+       Tela.setText(p1);
+       int operador = 1;
+ 
     }//GEN-LAST:event_btnSomaActionPerformed
 
     private void btnSubtracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubtracaoActionPerformed
@@ -325,7 +346,14 @@ String p1 = "";
     }//GEN-LAST:event_btnCActionPerformed
 
     private void btnIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIgualActionPerformed
-        // TODO add your handling code here:
+       sn = Integer.parseInt(p2);
+   //    switch(operador){
+     //      case 1:
+             int resul = (pn + sn );
+             Tela.setText(Integer.toString(resul));
+       //     break;   
+           
+      // }
     }//GEN-LAST:event_btnIgualActionPerformed
 
     private void TelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaActionPerformed
