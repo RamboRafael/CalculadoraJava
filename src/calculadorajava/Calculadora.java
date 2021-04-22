@@ -365,9 +365,9 @@ int resul;
            case 2:
             resul = (pn - sn);
             Tela.setText(Integer.toString(resul));
-            break;
-           
+            break;       
        }
+       p1 = Integer.toString(resul);
     }//GEN-LAST:event_btnIgualActionPerformed
 
     private void TelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaActionPerformed
