@@ -6,7 +6,7 @@ String p2 = "";
 int operador = 0;
 int pn = 0;
 int sn = 0;
-    
+int resul;
 
     public Calculadora() {
         initComponents();
@@ -325,12 +325,16 @@ int sn = 0;
        p1 += "+";
        p2 = "";
        Tela.setText(p1);
-       int operador = 1;
+       operador = 1;
  
     }//GEN-LAST:event_btnSomaActionPerformed
 
     private void btnSubtracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubtracaoActionPerformed
-        // TODO add your handling code here:
+       pn = Integer.parseInt(p1);
+       p1 += "-";
+       p2 = "";
+       Tela.setText(p1);
+       operador = 2;
     }//GEN-LAST:event_btnSubtracaoActionPerformed
 
     private void btnDivisaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivisaoActionPerformed
@@ -342,18 +346,28 @@ int sn = 0;
     }//GEN-LAST:event_btnMultiplicacaoActionPerformed
 
     private void btnCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCActionPerformed
-        // TODO add your handling code here:
+        p1 = "";
+        p2 = "";
+        pn = 0;
+        sn = 0;
+        resul = 0;
+        Tela.setText(p1);
     }//GEN-LAST:event_btnCActionPerformed
 
     private void btnIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIgualActionPerformed
        sn = Integer.parseInt(p2);
-   //    switch(operador){
-     //      case 1:
-             int resul = (pn + sn );
+       
+       switch(operador){
+           case 1:
+            resul = (pn + sn );
              Tela.setText(Integer.toString(resul));
-       //     break;   
+            break; 
+           case 2:
+            resul = (pn - sn);
+            Tela.setText(Integer.toString(resul));
+            break;
            
-      // }
+       }
     }//GEN-LAST:event_btnIgualActionPerformed
 
     private void TelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaActionPerformed
