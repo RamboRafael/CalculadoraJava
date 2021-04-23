@@ -338,11 +338,19 @@ int resul;
     }//GEN-LAST:event_btnSubtracaoActionPerformed
 
     private void btnDivisaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivisaoActionPerformed
-        // TODO add your handling code here:
+        pn = Integer.parseInt(p1);
+       p1 += "/";
+       p2 = "";
+       Tela.setText(p1);
+       operador = 4;
     }//GEN-LAST:event_btnDivisaoActionPerformed
 
     private void btnMultiplicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplicacaoActionPerformed
-        // TODO add your handling code here:
+        pn = Integer.parseInt(p1);
+       p1 += "x";
+       p2 = "";
+       Tela.setText(p1);
+       operador = 3;
     }//GEN-LAST:event_btnMultiplicacaoActionPerformed
 
     private void btnCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCActionPerformed
@@ -365,7 +373,15 @@ int resul;
            case 2:
             resul = (pn - sn);
             Tela.setText(Integer.toString(resul));
-            break;       
+            break;
+           case 3:
+            resul = (pn * sn);
+            Tela.setText(Integer.toString(resul));
+            break;
+           case 4:
+            resul = (pn / sn);
+            Tela.setText(Integer.toString(resul));
+            break;
        }
        p1 = Integer.toString(resul);
     }//GEN-LAST:event_btnIgualActionPerformed
