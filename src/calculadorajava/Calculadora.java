@@ -1,6 +1,8 @@
 
 package calculadorajava;
+
 public class Calculadora extends javax.swing.JFrame {
+
 String p1 = "";
 String p2 = "";
 int operador = 0;
@@ -41,8 +43,8 @@ String ze = "42";
         btnIgual = new javax.swing.JButton();
         btnSubtracao = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnPotenciacao = new javax.swing.JButton();
+        brnRaiz = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -136,8 +138,8 @@ String ze = "42";
         });
 
         btnDivisao.setText("/");
-        btnDivisao.setMaximumSize(new java.awt.Dimension(39, 23));
-        btnDivisao.setMinimumSize(new java.awt.Dimension(39, 23));
+        btnDivisao.setMaximumSize(new java.awt.Dimension(45, 25));
+        btnDivisao.setMinimumSize(new java.awt.Dimension(45, 25));
         btnDivisao.setPreferredSize(new java.awt.Dimension(45, 25));
         btnDivisao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,17 +194,27 @@ String ze = "42";
         jButton1.setText(".");
         jButton1.setPreferredSize(new java.awt.Dimension(45, 25));
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
-        jButton2.setText("x²");
-        jButton2.setMaximumSize(null);
-        jButton2.setMinimumSize(null);
-        jButton2.setPreferredSize(new java.awt.Dimension(45, 25));
+        btnPotenciacao.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        btnPotenciacao.setText("x²");
+        btnPotenciacao.setMaximumSize(null);
+        btnPotenciacao.setMinimumSize(null);
+        btnPotenciacao.setPreferredSize(new java.awt.Dimension(45, 25));
+        btnPotenciacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPotenciacaoActionPerformed(evt);
+            }
+        });
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
-        jButton3.setText("²√");
-        jButton3.setMaximumSize(null);
-        jButton3.setMinimumSize(null);
-        jButton3.setPreferredSize(new java.awt.Dimension(45, 25));
+        brnRaiz.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        brnRaiz.setText("²√");
+        brnRaiz.setMaximumSize(null);
+        brnRaiz.setMinimumSize(null);
+        brnRaiz.setPreferredSize(new java.awt.Dimension(45, 25));
+        brnRaiz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                brnRaizActionPerformed(evt);
+            }
+        });
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         jButton4.setText("+/-");
@@ -232,13 +244,13 @@ String ze = "42";
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnDivisao, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btn0, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -250,9 +262,9 @@ String ze = "42";
                             .addComponent(btnIgual, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnMultiplicacao, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(brnRaiz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
+                        .addComponent(btnPotenciacao, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnC, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -265,8 +277,8 @@ String ze = "42";
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPotenciacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(brnRaiz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSubtracao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -455,6 +467,7 @@ String ze = "42";
             Tela.setText(Integer.toString(resul));
             break;
        }
+       
        p1 = Integer.toString(resul);
        ze = Integer.toString(resul);
     }//GEN-LAST:event_btnIgualActionPerformed
@@ -462,6 +475,23 @@ String ze = "42";
     private void TelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaActionPerformed
         
     }//GEN-LAST:event_TelaActionPerformed
+
+    private void brnRaizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brnRaizActionPerformed
+        pn = Integer.parseInt(p1);
+        resul = (int) Math.sqrt(pn);
+        p1 = Integer.toString(resul);
+        ze = Integer.toString(resul);
+        Tela.setText(Integer.toString(resul));
+    }//GEN-LAST:event_brnRaizActionPerformed
+
+    private void btnPotenciacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPotenciacaoActionPerformed
+        pn = Integer.parseInt(p1);
+        resul = (int) Math.pow(pn,2);
+        p1 = Integer.toString(resul);
+        ze = Integer.toString(resul);
+        Tela.setText(Integer.toString(resul));
+        
+    }//GEN-LAST:event_btnPotenciacaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -503,6 +533,7 @@ String ze = "42";
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Tela;
+    private javax.swing.JButton brnRaiz;
     private javax.swing.JButton btn0;
     private javax.swing.JButton btn1;
     private javax.swing.JButton btn2;
@@ -517,11 +548,10 @@ String ze = "42";
     private javax.swing.JButton btnDivisao;
     private javax.swing.JButton btnIgual;
     private javax.swing.JButton btnMultiplicacao;
+    private javax.swing.JButton btnPotenciacao;
     private javax.swing.JButton btnSoma;
     private javax.swing.JButton btnSubtracao;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
