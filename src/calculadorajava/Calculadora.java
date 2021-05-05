@@ -6,10 +6,10 @@ public class Calculadora extends javax.swing.JFrame {
 String p1 = "";
 String p2 = "";
 int operador = 0;
-int pn = 0;
-int sn = 0;
-int resul;
-String ze = "42";
+double pn = 0;
+double sn = 0;
+double resul;
+String ze = "";
     public Calculadora() {
         initComponents();
         
@@ -42,7 +42,7 @@ String ze = "42";
         btnSoma = new javax.swing.JButton();
         btnIgual = new javax.swing.JButton();
         btnSubtracao = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnPonto = new javax.swing.JButton();
         btnPotenciacao = new javax.swing.JButton();
         brnRaiz = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -191,8 +191,13 @@ String ze = "42";
             }
         });
 
-        jButton1.setText(".");
-        jButton1.setPreferredSize(new java.awt.Dimension(45, 25));
+        btnPonto.setText(".");
+        btnPonto.setPreferredSize(new java.awt.Dimension(45, 25));
+        btnPonto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPontoActionPerformed(evt);
+            }
+        });
 
         btnPotenciacao.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         btnPotenciacao.setText("x²");
@@ -256,7 +261,7 @@ String ze = "42";
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btn3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnPonto, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnIgual, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -301,7 +306,7 @@ String ze = "42";
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn0, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnIgual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
@@ -365,7 +370,7 @@ String ze = "42";
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
         zerar();
         p1+="4";
-        p2+="5";
+        p2+="4";
         Tela.setText(p1);
     }//GEN-LAST:event_btn4ActionPerformed
 
@@ -405,7 +410,7 @@ String ze = "42";
     }//GEN-LAST:event_btn9ActionPerformed
 
     private void btnSomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSomaActionPerformed
-        pn = Integer.parseInt(p1);
+        pn = Double.parseDouble(p1);
        p1 += "+";
        p2 = "";
        Tela.setText(p1);
@@ -414,7 +419,7 @@ String ze = "42";
     }//GEN-LAST:event_btnSomaActionPerformed
 
     private void btnSubtracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubtracaoActionPerformed
-       pn = Integer.parseInt(p1);
+      pn = Double.parseDouble(p1);
        p1 += "-";
        p2 = "";
        Tela.setText(p1);
@@ -422,7 +427,7 @@ String ze = "42";
     }//GEN-LAST:event_btnSubtracaoActionPerformed
 
     private void btnDivisaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivisaoActionPerformed
-        pn = Integer.parseInt(p1);
+       pn = Double.parseDouble(p1);
        p1 += "/";
        p2 = "";
        Tela.setText(p1);
@@ -430,7 +435,7 @@ String ze = "42";
     }//GEN-LAST:event_btnDivisaoActionPerformed
 
     private void btnMultiplicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplicacaoActionPerformed
-        pn = Integer.parseInt(p1);
+        pn = Double.parseDouble(p1);
        p1 += "x";
        p2 = "";
        Tela.setText(p1);
@@ -447,29 +452,29 @@ String ze = "42";
     }//GEN-LAST:event_btnCActionPerformed
 
     private void btnIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIgualActionPerformed
-       sn = Integer.parseInt(p2);
+       sn = Double.parseDouble(p2);
        
        switch(operador){
            case 1:
             resul = (pn + sn );
-             Tela.setText(Integer.toString(resul));
+             Tela.setText(Double.toString(resul));
             break; 
            case 2:
             resul = (pn - sn);
-            Tela.setText(Integer.toString(resul));
+            Tela.setText(Double.toString(resul));
             break;
            case 3:
             resul = (pn * sn);
-            Tela.setText(Integer.toString(resul));
+            Tela.setText(Double.toString(resul));
             break;
            case 4:
             resul = (pn / sn);
-            Tela.setText(Integer.toString(resul));
+            Tela.setText(Double.toString(resul));
             break;
        }
        
-       p1 = Integer.toString(resul);
-       ze = Integer.toString(resul);
+       p1 = Double.toString(resul);
+       ze = Double.toString(resul);
     }//GEN-LAST:event_btnIgualActionPerformed
 
     private void TelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaActionPerformed
@@ -479,19 +484,26 @@ String ze = "42";
     private void brnRaizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brnRaizActionPerformed
         pn = Integer.parseInt(p1);
         resul = (int) Math.sqrt(pn);
-        p1 = Integer.toString(resul);
-        ze = Integer.toString(resul);
-        Tela.setText(Integer.toString(resul));
+        p1 = Double.toString(resul);
+        ze = Double.toString(resul);
+        Tela.setText(Double.toString(resul));
     }//GEN-LAST:event_brnRaizActionPerformed
 
     private void btnPotenciacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPotenciacaoActionPerformed
         pn = Integer.parseInt(p1);
         resul = (int) Math.pow(pn,2);
-        p1 = Integer.toString(resul);
-        ze = Integer.toString(resul);
-        Tela.setText(Integer.toString(resul));
+        p1 = Double.toString(resul);
+        ze = Double.toString(resul);
+        Tela.setText(Double.toString(resul));
         
     }//GEN-LAST:event_btnPotenciacaoActionPerformed
+
+    private void btnPontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPontoActionPerformed
+        zerar();
+        p1+=".";
+        p2+=".";
+       Tela.setText(p1);
+    }//GEN-LAST:event_btnPontoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -548,10 +560,10 @@ String ze = "42";
     private javax.swing.JButton btnDivisao;
     private javax.swing.JButton btnIgual;
     private javax.swing.JButton btnMultiplicacao;
+    private javax.swing.JButton btnPonto;
     private javax.swing.JButton btnPotenciacao;
     private javax.swing.JButton btnSoma;
     private javax.swing.JButton btnSubtracao;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
