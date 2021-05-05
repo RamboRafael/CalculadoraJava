@@ -45,7 +45,7 @@ String ze = "";
         btnPonto = new javax.swing.JButton();
         btnPotenciacao = new javax.swing.JButton();
         brnRaiz = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnNegativo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -221,9 +221,14 @@ String ze = "";
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
-        jButton4.setText("+/-");
-        jButton4.setPreferredSize(new java.awt.Dimension(45, 25));
+        btnNegativo.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        btnNegativo.setText("+/-");
+        btnNegativo.setPreferredSize(new java.awt.Dimension(45, 25));
+        btnNegativo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNegativoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -255,7 +260,7 @@ String ze = "";
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnNegativo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btn0, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -308,7 +313,7 @@ String ze = "";
                     .addComponent(btn0, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnPonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnIgual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnNegativo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -505,6 +510,18 @@ String ze = "";
        Tela.setText(p1);
     }//GEN-LAST:event_btnPontoActionPerformed
 
+    private void btnNegativoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNegativoActionPerformed
+         pn = Double.parseDouble(p1);
+        if(pn>0){
+            p1="-"+p1;
+        }else{
+           p1=p1.substring(1);
+        }
+        pn=0;
+        Tela.setText(p1);
+        
+    }//GEN-LAST:event_btnNegativoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -560,11 +577,11 @@ String ze = "";
     private javax.swing.JButton btnDivisao;
     private javax.swing.JButton btnIgual;
     private javax.swing.JButton btnMultiplicacao;
+    private javax.swing.JButton btnNegativo;
     private javax.swing.JButton btnPonto;
     private javax.swing.JButton btnPotenciacao;
     private javax.swing.JButton btnSoma;
     private javax.swing.JButton btnSubtracao;
-    private javax.swing.JButton jButton4;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
