@@ -487,16 +487,16 @@ String ze = "";
     }//GEN-LAST:event_TelaActionPerformed
 
     private void brnRaizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brnRaizActionPerformed
-        pn = Integer.parseInt(p1);
-        resul = (int) Math.sqrt(pn);
+      pn = Double.parseDouble(p1);
+        resul = (double) Math.sqrt(pn);
         p1 = Double.toString(resul);
         ze = Double.toString(resul);
         Tela.setText(Double.toString(resul));
     }//GEN-LAST:event_brnRaizActionPerformed
 
     private void btnPotenciacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPotenciacaoActionPerformed
-        pn = Integer.parseInt(p1);
-        resul = (int) Math.pow(pn,2);
+        pn = Double.parseDouble(p1);
+        resul = (double) Math.pow(pn,2);
         p1 = Double.toString(resul);
         ze = Double.toString(resul);
         Tela.setText(Double.toString(resul));
